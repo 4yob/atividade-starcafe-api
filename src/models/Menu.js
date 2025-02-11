@@ -4,7 +4,11 @@ class Menu {
     }
 
     addItem(item) {
-        this.items.push(order);
+        this.items.push(item);
+    }
+
+    getAllItems() {
+        return this.items;
     }
 }
 
