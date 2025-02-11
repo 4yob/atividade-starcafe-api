@@ -1,10 +1,15 @@
-const Movie = require("../models/Movie.js");
-const MovieList = require("../models/MovieList.js");
+const Menu = require("../models/Menu.js");
+const Item = require("../models/Item.js");
 
-const lista = new MovieList();
+const cardapio = new Menu();
 
-lista.addMovie(new Movie("Coraline", "Fantasia", "Henry Selick", "1h40", "13 Fev 2009"));
-lista.addMovie(new Movie("Ainda Estou Aqui", "Drama", "Walter Salles", "2h18", "7 Nov 2024"));
+cardapio.addItem(new Item("Café Espresso", 2.00));
+cardapio.addItem(new Item("Chocolate Quente", 5.00));
+cardapio.addItem(new Item("Suco de Laranja", 10.00));
+cardapio.addItem(new Item("Pão de Queijo", 2.50));
+cardapio.addItem(new Item("Pão na Chapa", 7.00));
+cardapio.addItem(new Item("Bolo de Nozes", 3.50));
+
 
 const router = {
     getAllMovies: (req, res) => {
