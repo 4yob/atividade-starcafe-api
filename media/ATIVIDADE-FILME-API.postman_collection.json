@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "59d5bb86-fdcc-4448-a59c-b119cb8dc847",
+		"name": "ATIVIDADE-FILME-API",
+		"description": "Esta atividade de Back-End tem como o objetivo criar rotas **CRUD** para as entidades de Filme **(Movie)** e Lista de Filmes **(MovieList)** se relacionarem utilizando a linguagem JavaScript.\n\n#### **Movie - atributos**\n\n- **`id`**\n    \n- **`title`**\n    \n- **`genre`**\n    \n- **`director`**\n    \n- **`duration`**\n    \n- **`premiere`**\n    \n\n#### **MovieList - atributo**\n\n- **`movie`**\n    \n\nA partir disso, a lista será manipulada diretamente com a criação, verificação e leitura, edição e remoção de filmes.\n\n##### **Dependências (bibliotecas):**\n\n- `express`\n    \n- `nodemon`\n    \n- `cors`\n    \n- `uuid`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37231916"
+	},
+	"item": [
+		{
+			"name": "GET ALL MOVIES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "A rota **GET (ALL MOVIES)** é utilizada para elencar todos os filmes contidos na lista de filmes."
+			},
+			"response": []
+		},
+		{
+			"name": "GET MOVIE BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/70184f75-f21e-4683-8d06-c8f184c7d222",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"70184f75-f21e-4683-8d06-c8f184c7d222"
+					]
+				},
+				"description": "A rota **GET (MOVIE BY ID)** traz um filme específico da lista quando dado o ID do elemento."
+			},
+			"response": []
+		},
+		{
+			"name": "ADD MOVIE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Meu Malvado Favorito\",\r\n    \"genre\": \"Animação\",\r\n    \"director\": \"Caio Gabriel\",\r\n    \"duration\": \"2h40\",\r\n    \"premiere\": \"6 Fev 2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "A rota **POST (ADD MOVIE)** serve para adicionar um filme ao catálogo. Segue exemplo abaixo:"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE MOVIE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Babá McPhee\",\r\n    \"genre\": \"Infantil\",\r\n    \"director\": \"Kirk Jones\",\r\n    \"duration\": \"1h37\",\r\n    \"premiere\": \"20 Jan 2006\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies/a8afe7ed-ba11-46e5-93fc-f37c3d5bde06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"a8afe7ed-ba11-46e5-93fc-f37c3d5bde06"
+					]
+				},
+				"description": "A rota **PUT (UPDATE MOVIE)** é direcionada à edição de um elemento de um filme - sendo título, gênero, diretor, duração e data de estreia - partindo de seu ID. Exemplo:"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE MOVIE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/a8afe7ed-ba11-46e5-93fc-f37c3d5bde06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"a8afe7ed-ba11-46e5-93fc-f37c3d5bde06"
+					]
+				},
+				"description": "A rota **DELETE (MOVIE)** se destina à remoção de um filme da lista, a partir de seu ID."
+			},
+			"response": []
+		},
+		{
+			"name": "XML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Movie>\r\n    <title>Coraline</title>\r\n    <genre>Fantasia</genre>\r\n    <director>Henry Selick</director>\r\n    <duration>1h40</duration>\r\n    <premiere>13 Fev 2009</premiere>\r\n</Movie>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					]
+				},
+				"description": "Por fim, a rota **POST XML** corresponde a um formato diferenciado de criar um filme para o catálogo, aplicando uma mistura de **HTML** com **Objeto do JavaScript (JSON)**. Exemplo:"
+			},
+			"response": []
+		}
+	]
+}
