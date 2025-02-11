@@ -1,7 +1,10 @@
 class Menu {
-    constructor(description, price) {
-        this.description = description;
-        this.price = price;
+    constructor() {
+        this.items = [];
+    }
+
+    addItem(item) {
+        this.items.push(order);
     }
 }
 
