@@ -19,12 +19,6 @@ class OrderList {
         return order;
     }
 
-    updateOrder(id, updateData) {
-        const order = this.getOrderById(id);
-        Object.assign(order, updateData);
-        return order;
-    }
-
     deleteOrder(id) {
         this.orders - this.orders.filter(order => order.id != id);
     }
