@@ -12,51 +12,26 @@ cardapio.addItem(new Item("Bolo de Nozes", 3.50));
 
 
 const router = {
-    getAllMovies: (req, res) => {
+    getAllItems: (req, res) => {
         try {
-            res.json(lista.getAllMovies());
+            res.json(cardapio.getAllItems());
         } catch (error) {
-            res.status(404).json({ message: "Erro ao buscar filmes. Tente novamente!", error })
+            res.status(404).json({ message: "Erro ao buscar o menu. Tente novamente!", error })
         }
     },
 
-    getMovieById: (req, res) => {
+    addItem: (req, res) => {
         try {
-            res.json(lista.getMovieById(req.params.id));
-        } catch (error) {
-            res.status(404).json({ message: "Filme não encontrado. Tente novamente!", error });
-        }
-    },
-
-    addMovie: (req, res) => {
-        try {
-            const { title, genre, director, duration, premiere } = req.body;
-            if (!title || !genre || !director || !duration || !premiere) {
+            const { description, price } = req.body;
+            if (!description || !price) {
                 throw new Error("Todos os campos são obrigatórios.");
             }
             
-            const film = new Movie(title, genre, director, duration, premiere);
-            lista.addMovie(film);
-            res.status(200).json({ message: "Filme adicionado com sucesso!", film});
+            const food = new Item(description, price);
+            cardapio.addItem(food);
+            res.status(200).json({ message: "Item adicionado ao menu!", food});
         } catch (error) {
             res.status(400).json({ message: error.message, error });
-        }
-    },
-
-    updateMovie: (req, res) => {
-        try {
-            res.status(200).json(lista.updateMovie(req.params.id, req.body));
-        } catch (error) {
-            res.status(404).json({ message: "Erro ao atualizar o filme. Tente novamente!", error });
-        }
-    },
-
-    deleteMovie: (req, res) => {
-        try {
-            lista.deleteMovie(req.params.id);
-            res.status(200).json({ message: "Filme deletado com sucesso!"})
-        } catch (error) {
-            res.status(404).json({ message: "Erro ao deletar filme. Tente novamente!"});
         }
     }
 }
