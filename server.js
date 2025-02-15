@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const movieRoutes = require("./src/routes/movieRoutes.js");
+const orderRoutes = require("./src/routes/orderRoutes.js");
 
 const app = express();
 const PORT = 3000;
@@ -8,7 +8,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use ("/api", movieRoutes);
+app.use ("/api", orderRoutes);
 
 app.get("/", (req, res) => {
     res.send("Y daleeeeeee !!");
