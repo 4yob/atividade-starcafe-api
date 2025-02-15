@@ -13,7 +13,7 @@ listaPedidos.addOrder(new Order("Bruna", "Café Expresso", 3.50, "Pendente"));
 const router = {
     getAllOrders: (req, res) => {
         try {
-            res.json(lista.getAllOrders());
+            res.json(listaPedidos.getAllOrders());
         } catch (error) {
             res.status(404).json({ message: "Erro ao buscar pedidos. Tente novamente!", error })
         }
