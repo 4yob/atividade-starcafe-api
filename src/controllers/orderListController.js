@@ -31,12 +31,12 @@ const router = {
 
     addOrder: (req, res) => {
         try {
-            const { clientName, description, price, status } = req.body;
-            if (!clientName || !description || !price || !status) {
-                throw new Error("Preencha todos os campos para concluir.");
+            const { clientName, description, price } = req.body;
+            if (!clientName || !description || !price) {
+                throw new Error("Preencha todos os campos para concluir seu pedido.");
             }
             
-            const order = new Order(clientName, description, price, status);
+            const order = new Order(clientName, description, price);
             listaPedidos.addOrder(order);
             res.status(200).json({ message: "Pedido realizado com sucesso! Aguarde sua vez.", order});
         } catch (error) {
