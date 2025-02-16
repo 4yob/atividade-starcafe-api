@@ -13,7 +13,8 @@ listaPedidos.addOrder(new Order("Bruna", "Café Expresso", 3.50, "Pendente"));
 const router = {
     getAllOrders: (req, res) => {
         try {
-            res.json(listaPedidos.getAllOrders());
+            const orders = listaPedidos.getAllOrders();
+            res.json({Pedidos: orders})
         } catch (error) {
             res.status(404).json({ message: "Erro ao buscar pedidos. Tente novamente!", error })
         }
@@ -21,7 +22,8 @@ const router = {
 
     getOrderById: (req, res) => {
         try {
-            res.json(listaPedidos.getOrderById(req.params.id));
+            const order = listaPedidos.getOrderById(req.params.id);
+            res.json({ message: "Pedido identificado com sucesso!", Pedido: order});
         } catch (error) {
             res.status(404).json({ message: "Pedido não encontrado. Tente novamente!", error });
         }

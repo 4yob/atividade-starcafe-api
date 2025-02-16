@@ -14,7 +14,8 @@ cardapio.addItem(new Item("Bolo de Nozes", 3.50));
 const router = {
     getAllItems: (req, res) => {
         try {
-            res.json(cardapio.getAllItems());
+            const menu = cardapio.getAllItems();
+            res.json({message: "Aqui está o catálogo da Star-Café", Menu: menu});
         } catch (error) {
             res.status(404).json({ message: "Erro ao buscar o menu. Tente novamente!", error })
         }
