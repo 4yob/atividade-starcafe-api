@@ -110,6 +110,8 @@ O exercício tem os seguintes endpoints (rotas):
 
    	- **Sucesso (Cliente realiza o pedido)** - 🟢 200 OK
    	- **Erro do Cliente (Não preenche todos os campos obrigatórios)** - 🔴 400 BAD REQUEST
+   	- **Erro do Cliente (Pede um item que não está no menu)** - 🔴 400 BAD REQUEST
+   	- **Erro do Cliente (Não insere um valor numérico no preço do item)** - 🔴 400 BAD REQUEST
 
  - 🟩 **GET/order/:id**: Consultará um pedido pelo id.
    ![image](https://github.com/user-attachments/assets/dd73b242-5109-4d30-8be2-644261f87f8f)
