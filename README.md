@@ -1,19 +1,19 @@
-**ATIVIDADE STAR-CAFÉ**
+☕ **ATIVIDADE STAR-CAFÉ** ☕
 
 A atividade foi desenvolvida para simular o sistema de gerenciamento de uma cafeteria famosa, denominada Star-Café. Utilizando a linguagem **JavaScript** da programação Back-End, a API permite que clientes façam pedidos e que o estabelecimento consiga administrar os produtos em estoque.
 
-**Aplicativos utilizados**:
+📱 **Aplicativos utilizados**:
 - **Postman**
 - **Visual Studio Code**
 
-**Dependências**:
+🗃️ **Dependências**:
 - **Cors**
 - **DotEnv**
 - **Express**
 - **Nodemon**
 - **Uuid**
 
-**Significados dos Cabeçalhos HTTP que aparecerão durante a documentação:**
+📖 **Significados dos Cabeçalhos HTTP que aparecerão durante a documentação:**
 
 - **Content-type: application/json** - Especifica o tipo de mídia da requisição ou resposta. Neste caso, todas as rotas terão o corpo no formato JSON com o padrão de caracteres UTF-8.
   
