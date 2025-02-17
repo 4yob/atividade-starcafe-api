@@ -35,7 +35,12 @@ const router = {
             if (!clientName || !description || !price) {
                 throw new Error("Preencha todos os campos para concluir seu pedido.");
             }
-            
+            if (description !== "Café Expresso" && description !== "Chocolate Quente" && description !== "Suco de Laranja" && description !== "Pão de Queijo" && description !== "Pão na Chapa" && description !== "Bolo de Nozes") {
+                throw new Error("O item escolhido não está disponível no nosso menu. Por favor, escolha outro item.");
+            }
+            if (typeof price !== "number") {
+                throw new Error("Por favor, insira um valor numérico para o preço.");
+            }
             const order = new Order(clientName, description, price);
             listaPedidos.addOrder(order);
             res.status(200).json({ message: "Pedido realizado com sucesso! Aguarde sua vez.", order});
