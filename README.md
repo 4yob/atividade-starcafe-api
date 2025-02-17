@@ -90,7 +90,7 @@ O exercício tem os seguintes endpoints (rotas):
 
 	**Corpo da requisição(JSON)**:
 
-   ![image](https://github.com/user-attachments/assets/fab0725f-3d9c-4f2b-a64b-b3ace1e52177)
+   ![image](https://github.com/user-attachments/assets/b55a7c35-988c-4751-b355-b852c8199b9f)
 
 	**Cabeçalhos HTTP da resposta**:
 	 - **X-Powered-By:** Express
@@ -104,7 +104,7 @@ O exercício tem os seguintes endpoints (rotas):
 
 	**Corpo da resposta(JSON)**:
 
-	![image](https://github.com/user-attachments/assets/39852ee9-2f9e-4fba-8241-013537fae89f)
+	![image](https://github.com/user-attachments/assets/3a9066ee-d847-4ddb-b2f8-12dfd48e954b)
 
 	**Código Status**:
 
