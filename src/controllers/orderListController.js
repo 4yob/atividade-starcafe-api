@@ -52,8 +52,8 @@ const router = {
     deleteOrder: (req, res) => {
         try {
             const order = listaPedidos.getOrderById(req.params.id);
-            if (order.status === "Preparando" || order.status === "Pronto") {
-                return res.status(403).json({ message: "Lamentamos, mas não é possível cancelar um pedido pronto ou que esteja sendo preparado."})
+            if (order.status === "Pronto") {
+                return res.status(403).json({ message: "Lamentamos, mas não é possível cancelar um pedido já finalizado."})
             }
             listaPedidos.deleteOrder(req.params.id);
             res.status(200).json({ message: "Pedido cancelado com sucesso! Até a próxima."});
