@@ -13,11 +13,41 @@ A atividade foi desenvolvida para simular o sistema de gerenciamento de uma cafe
 - **Nodemon**
 - **Uuid**
 
+**Significados dos Cabeçalhos HTTP que aparecerão durante a documentação:**
+
+- **Content-type: application/json** - Especifica o tipo de mídia da requisição ou resposta. Neste caso, todas as rotas terão o corpo no formato JSON com o padrão de caracteres UTF-8.
+  
+- **User-Agent: PostmanRuntime/7.43.0** - Identifica o cliente que está fazendo a requisição. Neste cenário, o cliente é o Postman.
+  
+- **Accept: */*** - Indica quais tipos de mídia o cliente é capaz de entender. Na atividade, o */* significa que ele aceita qualquer tipo de mídia.
+  
+- **Cache-Control: no-cache** - É a instrução para mecanismos de cache. O "no-cache" traduz que o cliente quer uma cópia fresca, forçando a obtenção de uma nova resposta do servidor.
+  
+- **Postman-Token** - É um cabeçalho específico do Postman, gerado automaticamente por ele, usado para ajudar a identificar a requisição e evitar repetições.
+  
+- **Host: localhost:3000** - Especifica o host e a porta do servidor de destino da requisição. O "localhost:3000" indica que a requisição está sendo enviada para um servidor rodando localmente na porta 3000.
+  
+- **Accept-Encoding: gzip, deflate, br** - Demonstra quais esquemas de codificação de conteúdo o cliente suporta. Neste caso, gzip, deflate e br (Brotli) são métodos de compressão usados para reduzir o tamanho dos dados transmitidos.
+  
+- **Connection: keep-alive** - Especifica as opções de controle de conexão para a requisição/resposta. O "keep-alive" indica que a conexão deve ser mantida aberta para possíveis requisições subsequentes.
+  
+- **Content-Length** - Indica o tamanho do corpo da requisição em bytes.
+  
+- **X-Powered-By: Express** - Indica que o servidor que gerou a resposta está usando o framework Express para Node.js.
+  
+- **Access-Control-Allow-Origin:** * - Permite que qualquer origem acesse o recurso. Este cabeçalho é parte das configurações de CORS (Cross-Origin Resource Sharing) que permitem o controle de acesso de recursos na web.
+  
+- **ETag**: ETag (Entity Tag) é uma identificador único para uma versão específica de um recurso. Esse valor é usado para determinar se o recurso mudou entre solicitações.
+  
+- **Date** - Simboliza a data e a hora em que a resposta foi gerada pelo servidor.
+  
+- **Keep-Alive: timeout=5** - Especifica o tempo em segundos que a conexão deve ser mantida viva após a resposta inicial, no caso, 5 segundos.
+
 O exercício tem os seguintes endpoints (rotas):
 
  - **GET/menu**: Retornará o cardápio da cafeteria.
 
-   **Cabeçalho HTTP da requisição**:
+   **Cabeçalhos HTTP da requisição**:
    - **User-Agent:** PostmanRuntime/7.43.0
    - **Accept:** */*
    - **Cache-Control:** no-cache
@@ -26,7 +56,7 @@ O exercício tem os seguintes endpoints (rotas):
    - **Accept-Encoding:** gzip, deflate, br
    - **Connection:** keep-alive
   
-   **Cabeçalho HTTP da resposta**:
+   **Cabeçalhos HTTP da resposta**:
    - **X-Powered-By:** Express
    - **Access-Control-Allow-Origin:** *
    - **Content-Type:** application/json; charset=utf-8
@@ -40,10 +70,9 @@ O exercício tem os seguintes endpoints (rotas):
 
 	 ![image](https://github.com/user-attachments/assets/497cd458-3c84-47c4-a649-cbaccab76f72)
 
-
  - **POST/order**: Permitirá a criação de um pedido pelo cliente.
 
-   **Cabeçalho HTTP da requisição**:
+   **Cabeçalhos HTTP da requisição**:
    - **Content-Type:** application/json
    - **User-Agent:** PostmanRuntime/7.43.0
    - **Accept:** */*
@@ -58,7 +87,7 @@ O exercício tem os seguintes endpoints (rotas):
 
    ![image](https://github.com/user-attachments/assets/fab0725f-3d9c-4f2b-a64b-b3ace1e52177)
 
-	**Cabeçalho HTTP da resposta**:
+	**Cabeçalhos HTTP da resposta**:
 	 - **X-Powered-By:** Express
    - **Access-Control-Allow-Origin:** *
    - **Content-Type:** application/json; charset=utf-8
@@ -76,7 +105,7 @@ O exercício tem os seguintes endpoints (rotas):
  - **GET/order/:id**: Consultará um pedido pelo id.
    ![image](https://github.com/user-attachments/assets/dd73b242-5109-4d30-8be2-644261f87f8f)
 
-   **Cabeçalho HTTP da requisição**:
+   **Cabeçalhos HTTP da requisição**:
    - **User-Agent:** PostmanRuntime/7.43.0
    - **Accept:** */*
    - **Cache-Control:** no-cache
@@ -85,7 +114,7 @@ O exercício tem os seguintes endpoints (rotas):
    - **Accept-Encoding:** gzip, deflate, br
    - **Connection:** keep-alive
 
-   **Cabeçalho HTTP da resposta**:
+   **Cabeçalhos HTTP da resposta**:
    - **X-Powered-By:** Express
    - **Access-Control-Allow-Origin:** *
    - **Content-Type:** application/json; charset=utf-8
@@ -103,7 +132,7 @@ O exercício tem os seguintes endpoints (rotas):
  - **DELETE/order/:id**: Deletará um pedido pelo id.
    ![image](https://github.com/user-attachments/assets/483749e6-ec5d-49be-9524-e0f267179e81)
 
-	 **Cabeçalho HTTP da requisição**:
+	 **Cabeçalhos HTTP da requisição**:
    - **User-Agent:** PostmanRuntime/7.43.0
    - **Accept:** */*
    - **Cache-Control:** no-cache
@@ -112,7 +141,7 @@ O exercício tem os seguintes endpoints (rotas):
    - **Accept-Encoding:** gzip, deflate, br
    - **Connection:** keep-alive
 
-	**Cabeçalho HTTP da resposta**:
+	**Cabeçalhos HTTP da resposta**:
 	 - **X-Powered-By:** Express
    - **Access-Control-Allow-Origin:** *
    - **Content-Type:** application/json; charset=utf-8
