@@ -45,7 +45,7 @@ A atividade foi desenvolvida para simular o sistema de gerenciamento de uma cafe
 
 O exercício tem os seguintes endpoints (rotas):
 
- - **GET/menu**: Retornará o cardápio da cafeteria.
+ - 🟩 **GET/menu**: Retornará o cardápio da cafeteria.
 
    **Cabeçalhos HTTP da requisição**:
    - **User-Agent:** PostmanRuntime/7.43.0
@@ -70,7 +70,12 @@ O exercício tem os seguintes endpoints (rotas):
 
 	 ![image](https://github.com/user-attachments/assets/497cd458-3c84-47c4-a649-cbaccab76f72)
 
- - **POST/order**: Permitirá a criação de um pedido pelo cliente.
+	**Códigos Status**:
+
+	- **Sucesso (Cliente faz uma requisição GET para /menu)** - 🟢 200 OK
+	- **Erro do Cliente (Cliente faz uma requisição GET para uma rota errada)** - 🔴 404 NOT FOUND
+   
+ - 🟨 **POST/order**: Permitirá a criação de um pedido pelo cliente.
 
    **Cabeçalhos HTTP da requisição**:
    - **Content-Type:** application/json
@@ -101,8 +106,12 @@ O exercício tem os seguintes endpoints (rotas):
 
 	![image](https://github.com/user-attachments/assets/39852ee9-2f9e-4fba-8241-013537fae89f)
 
+	**Código Status**:
 
- - **GET/order/:id**: Consultará um pedido pelo id.
+   	- **Sucesso (Cliente realiza o pedido)** - 🟢 200 OK
+   	- **Erro do Cliente (Não preenche todos os campos obrigatórios)** - 🔴 400 BAD REQUEST
+
+ - 🟩 **GET/order/:id**: Consultará um pedido pelo id.
    ![image](https://github.com/user-attachments/assets/dd73b242-5109-4d30-8be2-644261f87f8f)
 
    **Cabeçalhos HTTP da requisição**:
@@ -128,8 +137,13 @@ O exercício tem os seguintes endpoints (rotas):
    
    ![image](https://github.com/user-attachments/assets/063d337b-943c-426e-a62a-ee4a0a70b164)
 
+   **Código Status**:
 
- - **DELETE/order/:id**: Deletará um pedido pelo id.
+   - **Sucesso (Cliente consulta pedido e seu status)** - 🟢 200 OK
+   - **Erro do Cliente (O ID requisitado não corresponde a nenhum pedido da lista)** - 🔴 404 NOT FOUND
+
+
+ - 🟥 **DELETE/order/:id**: Deletará um pedido pelo id.
    ![image](https://github.com/user-attachments/assets/483749e6-ec5d-49be-9524-e0f267179e81)
 
 	 **Cabeçalhos HTTP da requisição**:
@@ -155,3 +169,8 @@ O exercício tem os seguintes endpoints (rotas):
 
 	 ![image](https://github.com/user-attachments/assets/466c3560-2b22-4a9c-873d-bb908e136f59)
 
+	**Código Status**:
+
+   	- **Sucesso (Cliente consegue cancelar pedido)** - 🟢 200 OK
+   	- **Erro do Cliente (O ID solicitado não corresponde a nenhum pedido)** - 🔴 404 NOT FOUND
+   	- **Erro do Cliente (O cliente tentou cancelar um pedido já finalizado)** - 🔴 403 FORBIDDEN
