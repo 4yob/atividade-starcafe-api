@@ -20,7 +20,7 @@ class OrderList {
     }
 
     deleteOrder(id) {
-        this.orders - this.orders.filter(order => order.id != id);
+        this.orders = this.orders.filter(order => order.id != id);
     }
 }
 
